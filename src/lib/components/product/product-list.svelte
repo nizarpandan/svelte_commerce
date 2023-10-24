@@ -4,8 +4,8 @@
 
   let products: Product[]= [
     {name: "Basic Tee", color: "Black", price: 35},
-    {name: "Basic Tee", color: "Aspen White", price: 35},
-    {name: "Basic Tee", color: "Charcoal", price: 35},
+    {name: "V-Neck Tee", color: "Aspen White", price: 35},
+    {name: "Turtle Tee", color: "Charcoal", price: 35},
     {name: "Artwork Tee", color: "Iso Dots", price: 37}
   ]
 </script>
