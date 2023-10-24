@@ -55,28 +55,38 @@
 
         <!-- 'Women' tab panel, show/hide based on tab state. -->
         <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
-          <div class="grid grid-cols-2 gap-x-4">
-            <div class="group relative text-sm">
-              <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
+            <div class="grid grid-cols-3 gap-x-4"> <!-- change 2 to 3. -->
+                <div class="group relative text-sm">
+                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
+                  </div>
+                  <a href="/" class="mt-6 block font-medium text-gray-900">
+                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                    New Arrivals
+                  </a>
+                  <p aria-hidden="true" class="mt-1">Shop now</p>
+                </div>
+                <div class="group relative text-sm">
+                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
+                  </div>
+                  <a href="/" class="mt-6 block font-medium text-gray-900">
+                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                    Basic Tees
+                  </a>
+                  <p aria-hidden="true" class="mt-1">Shop now</p>
+                </div>
+                <div class="group relative text-sm"> <!-- adding more data. -->
+                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Multiple Basic Tee." class="object-cover object-center">
+                  </div>
+                  <a href="/" class="mt-6 block font-medium text-gray-900">
+                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                    Monochrome Tees
+                  </a>
+                  <p aria-hidden="true" class="mt-1">Shop now</p>
+                </div> <!-- end of adding more data. -->
               </div>
-              <a href="/" class="mt-6 block font-medium text-gray-900">
-                <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                New Arrivals
-              </a>
-              <p aria-hidden="true" class="mt-1">Shop now</p>
-            </div>
-            <div class="group relative text-sm">
-              <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
-              </div>
-              <a href="/" class="mt-6 block font-medium text-gray-900">
-                <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                Basic Tees
-              </a>
-              <p aria-hidden="true" class="mt-1">Shop now</p>
-            </div>
-          </div>
           <div>
             <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
             <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
