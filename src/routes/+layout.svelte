@@ -1,12 +1,16 @@
-<script>
+<script lang="ts">
   import FlyoutMenu from '$lib/components/flyout-menu/flyout-menu.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
 	import MobileMenu from '$lib/components/mobile-menu/mobile-menu.svelte';
 	import '../app.postcss';
+	import { createMobileMenuStore } from '$lib/mobileMenu-store';
+
+  export const mobileMenu = createMobileMenuStore("hidden");
+
 </script>
 
 <div class="bg-white">
-  <MobileMenu/>
+  <MobileMenu menuClass={$mobileMenu} closeMenu={mobileMenu.hideMobileMenu}/>
   <header class="relative bg-white">
     <p class="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">Get free delivery on orders over $100</p>
 
@@ -14,7 +18,7 @@
       <div class="border-b border-gray-200">
         <div class="flex h-16 items-center">
           <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-          <button type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
+          <button on:click={mobileMenu.showMobileMenu} type="button" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">

@@ -1,5 +1,6 @@
 <script lang="ts">
-
+  export let menuClass: string;
+  export let closeMenu: () => void;
 </script>
 
 <!--
@@ -7,7 +8,7 @@
 
     Off-canvas menu for mobile, show/hide based on off-canvas menu state.
   -->
-<div class="relative z-40 lg:hidden" role="dialog" aria-modal="true">
+<div class={`${menuClass} relative z-40 lg:hidden`} role="dialog" aria-modal="true">
   <!--
     Off-canvas menu backdrop, show/hide based on off-canvas menu state.
 
@@ -33,7 +34,7 @@
     -->
     <div class="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
       <div class="flex px-4 pb-2 pt-5">
-        <button type="button" class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
+        <button on:click={closeMenu} type="button" class="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Close menu</span>
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -56,37 +57,37 @@
         <!-- 'Women' tab panel, show/hide based on tab state. -->
         <div id="tabs-1-panel-1" class="space-y-10 px-4 pb-8 pt-10" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
             <div class="grid grid-cols-3 gap-x-4"> <!-- change 2 to 3. -->
-                <div class="group relative text-sm">
-                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                    <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
-                  </div>
-                  <a href="/" class="mt-6 block font-medium text-gray-900">
-                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                    New Arrivals
-                  </a>
-                  <p aria-hidden="true" class="mt-1">Shop now</p>
+              <div class="group relative text-sm">
+                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                  <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="object-cover object-center">
                 </div>
-                <div class="group relative text-sm">
-                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                    <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
-                  </div>
-                  <a href="/" class="mt-6 block font-medium text-gray-900">
-                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                    Basic Tees
-                  </a>
-                  <p aria-hidden="true" class="mt-1">Shop now</p>
-                </div>
-                <div class="group relative text-sm"> <!-- adding more data. -->
-                  <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Multiple Basic Tee." class="object-cover object-center">
-                  </div>
-                  <a href="/" class="mt-6 block font-medium text-gray-900">
-                    <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                    Monochrome Tees
-                  </a>
-                  <p aria-hidden="true" class="mt-1">Shop now</p>
-                </div> <!-- end of adding more data. -->
+                <a href="/product-details/04" on:click={closeMenu} class="mt-6 block font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  New Arrivals
+                </a>
+                <p aria-hidden="true" class="mt-1">Shop now</p>
               </div>
+              <div class="group relative text-sm">
+                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                  <img src="https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="object-cover object-center">
+                </div>
+                <a href="/product-details/02" on:click={closeMenu} class="mt-6 block font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  Basic Tees
+                </a>
+                <p aria-hidden="true" class="mt-1">Shop now</p>
+              </div>
+              <div class="group relative text-sm"> <!-- adding more data. -->
+                <div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                  <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Multiple Basic Tee." class="object-cover object-center">
+                </div>
+                <a href="/product-details/01" on:click={closeMenu} class="mt-6 block font-medium text-gray-900">
+                  <span class="absolute inset-0 z-10" aria-hidden="true"></span>
+                  Monochrome Tees
+                </a>
+                <p aria-hidden="true" class="mt-1">Shop now</p>
+              </div> <!-- end of adding more data. -->
+            </div>
           <div>
             <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
             <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">

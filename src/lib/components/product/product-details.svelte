@@ -1,4 +1,14 @@
 <script lang="ts">
+	import { Products } from "$lib/data/products";
+	import type { Product } from "$lib/models/product";
+
+  export let productId: string;
+  let products: Product[] = Products
+
+  function getImageDetailUrl(): Product {
+    return products.find((x) => x.id === productId)!;
+  }
+
 </script>
 
 <div class="bg-white">
@@ -23,7 +33,7 @@
         </li>
 
         <li class="text-sm">
-          <a href="/" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Basic Tee 6-Pack</a>
+          <a href="/" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">{getImageDetailUrl().name}</a>
         </li>
       </ol>
     </nav>
@@ -42,20 +52,20 @@
         </div>
       </div>
       <div class="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-        <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
+        <img src={getImageDetailUrl().imageDetailUrl} alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
       </div>
     </div>
 
     <!-- Product info -->
     <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
       <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Basic Tee 6-Pack</h1>
+        <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">{getImageDetailUrl().name} - {getImageDetailUrl().color}</h1>
       </div>
 
       <!-- Options -->
       <div class="mt-4 lg:row-span-3 lg:mt-0">
         <h2 class="sr-only">Product information</h2>
-        <p class="text-3xl tracking-tight text-gray-900">$192</p>
+        <p class="text-3xl tracking-tight text-gray-900">${getImageDetailUrl().price}</p>
 
         <!-- Reviews -->
         <div class="mt-6">

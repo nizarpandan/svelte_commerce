@@ -1,13 +1,9 @@
 <script lang="ts">
+	import { Products } from "$lib/data/products";
 	import type { Product } from "$lib/models/product";
 	import ProductCard from "./product-card.svelte";
 
-  let products: Product[]= [
-    {name: "Basic Tee", color: "Black", price: 35},
-    {name: "V-Neck Tee", color: "Aspen White", price: 35},
-    {name: "Turtle Tee", color: "Charcoal", price: 35},
-    {name: "Artwork Tee", color: "Iso Dots", price: 37}
-  ]
+  let products: Product[] = Products;
 </script>
 
 <div class="bg-white">
